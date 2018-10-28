@@ -1,0 +1,36 @@
+﻿{
+  "GlobalConfiguration": {},
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/{parametro}",
+      "UpstreamPathTemplate": "/{parametro}",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "www.google.com.br",
+          "Port": 443
+        }
+      ]
+    },
+    {
+      "DelegatingHandlers": [
+        "GoogleDelegatingHandler"
+      ],
+      "DownstreamPathTemplate": "/handler/{parametro}",
+      "UpstreamPathTemplate": "/handler/{parametro}",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "www.google.com.br",
+          "Port": 443
+        }
+      ]
+    }
+  ]
+}
